@@ -1,7 +1,8 @@
 ---
 title: "Jacob Perez"
+image: fallow-9558844_1280.jpg
 about:
-  template: trestles
+  template: marquee
   links: 
     - text: LinkedIn
       href: www.linkedin.com/in/jacob-u-perez
@@ -11,7 +12,7 @@ about:
       href: malito::jpere212@calpoly.edu
 ---
 
-
+Hi I'm Jacob.
 
 
 
