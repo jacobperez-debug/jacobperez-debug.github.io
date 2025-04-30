@@ -1,0 +1,12 @@
+---
+title: "Having Fun with Data Visualizations"
+description: "blog post description"
+author: 
+  - name: Jacob Perez
+    url: https://github.com/jacobperez-debug
+    affiliation: Master of Science in Statistics @ Cal Poly SLO
+date: 04-30-2025
+categories: [Quarto, R, STAT541]
+draft: true
+---
+
