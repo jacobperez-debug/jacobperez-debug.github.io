@@ -1,11 +1,17 @@
 ---
-title: "jacobperez-debug.github.io"
+title: "Jacob Perez"
+about:
+  template: trestles
+  links: 
+    - text: LinkedIn
+      href: www.linkedin.com/in/jacob-u-perez
+    - text: GitHub
+      href: https://github.com/jacobperez-debug
+    - text: Email
+      href: malito::jpere212@calpoly.edu
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-```{r}
-1 + 1
-```
+
+
