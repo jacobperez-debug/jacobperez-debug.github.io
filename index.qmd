@@ -2,7 +2,9 @@
 title: "Jacob Perez"
 image: fallow-9558844_1280.jpg
 about:
-  template: marquee
+  template: jolla
+  image-shape: round
+  image-width: 17em
   links: 
     - text: LinkedIn
       href: www.linkedin.com/in/jacob-u-perez
