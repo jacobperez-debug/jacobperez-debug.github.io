@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  
+exclude:
+  - scripts/*
 
 website:
   title: "Jacob Perez"

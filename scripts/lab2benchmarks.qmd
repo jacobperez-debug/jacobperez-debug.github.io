@@ -1,0 +1,68 @@
+---
+title: "Lab 2 Benchmarks"
+format: html
+draft: true
+---
+
+```{r}
+#| label: read-in-wellcome-data
+library(readxl)
+library(here)
+
+wgm2018 <- read_excel(here::here("data/wgm2018-dataset-crosstabs-all-countries.xlsx"), sheet = 2)
+
+wgm20183 <- read_excel(here::here("data/wgm2018-dataset-crosstabs-all-countries.xlsx"), sheet = 3)
+```
+
+6.  Improve the visualization above by either re-creating it with the issues you identified fixed OR by creating a new visualization that you believe tells the same story better.
+
+```{r}
+#| label: new-and-improved-visualization
+
+library(tidyverse)
+library(gganimate)
+
+df_raw <- tibble(x = str_split(wgm20183$`Variable Type & Codes*`[1], ',\\s')[[1]])
+
+df_countries <- df_raw |>
+  separate_wider_delim(x, delim = '=', names = c("country_id", "country_name")) |>
+  mutate(country_id = as.numeric(country_id))
+```
+
+```{r}
+#| label: join two datasets
+
+wgm2018_joined <-  left_join(wgm2018, df_countries, by = c("WP5" = "country_id")) |>
+  mutate(region = case_when(
+    Regions_Report %in% c(1, 2, 4, 5) ~ "Africa",
+    Regions_Report %in% c(6, 7, 8) ~ "Americas",
+    Regions_Report %in% c(9, 10, 11, 12, 18) ~ "Asia",
+    Regions_Report %in% c(3, 13) ~ "Middle East and North Africa",
+    Regions_Report %in% c(14) ~ "Former Soviet Union",
+    Regions_Report %in% c(15, 16, 17, 0) ~ "Europe"
+  )) |>
+  select(country_name, region, wgt, PROJWT, Q25, Q9, Q8, Q6)
+```
+
+```{r}
+#| label: summarize proporitons
+
+summary_df <- wgm2018_joined |>
+  filter(!is.na(Q25)) |>
+  group_by(country_name, region) |>
+  summarise(
+    total_responses = n(),
+    count = sum(Q25 %in% c(1, 2)),
+    prop = count / total_responses
+  ) |>
+  select(country_name, region, prop) %>%
+  mutate(country_name = if_else(country_name == "Northern Cyprus,", "Northern Cyprus", country_name))
+```
+
+```{r}
+write_csv(wgm2018_joined, here::here("data/wgm2018_joined.csv"))
+```
+
+```{r}
+write_csv(summary_df, here::here("data/summary_df.csv"))
+```

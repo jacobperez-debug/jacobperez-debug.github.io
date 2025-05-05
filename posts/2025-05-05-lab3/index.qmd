@@ -1,0 +1,24 @@
+---
+title: "Making Static Quarto Dashboards"
+description: "A brief introduction to making static Quarto dashboards"
+author: 
+  - name: Jacob Perez
+    url: https://github.com/jacobperez-debug
+    affiliation: Master of Science in Statistics @ Cal Poly SLO
+date: 05-05-2025
+warning: false
+message: false
+code-fold: true
+categories: [Quarto, R, STAT541]
+draft: true
+---
+
+## Interactive Dashboard
+
+<iframe src="https://jacobperez.quarto.pub/trust-in-science-global-patterns--change/#trust-across-regions" width="100%" height="600px"></iframe>
+
+## About the Project
+
+This dashboard explores changes in public trust in science across different global regions. Built using Quarto and Leaflet, it allows users to interactively explore survey results across time and geography.
+
+[View Dashboard Code on GitHub](https://github.com/jacobperez-debug/YOUR-REPO-HERE)
