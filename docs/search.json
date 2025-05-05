@@ -19,5 +19,12 @@
     "title": "My Blog",
     "section": "",
     "text": "Shiny App: Exploring Vaccine Confidence\n\n\n\nDashboard\n\n\nR\n\n\nSTAT541\n\n\nShiny\n\n\n\nAn interactive dashboard built in Shiny to explore regional patterns in vaccine trust.\n\n\n\nJacob Perez\n\n\nMay 5, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMaking Static Quarto Dashboards\n\n\n\nDashboard\n\n\nR\n\n\nSTAT541\n\n\n\nA brief introduction to making static Quarto dashboards\n\n\n\nJacob Perez\n\n\nMay 5, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHaving Fun with Data Visualizations\n\n\n\nR\n\n\nSTAT541\n\n\n\nAn animated visaulization exploring the Wellcome Global Monitor 2018 Report\n\n\n\nJacob Perez\n\n\nApr 30, 2025\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/2025-05-05-lab3/index.html#about-the-project",
+    "href": "posts/2025-05-05-lab3/index.html#about-the-project",
+    "title": "Making Static Quarto Dashboards",
+    "section": "About the Project",
+    "text": "About the Project\nThis dashboard explores changes in public trust in science across different global regions. Built using Quarto and Leaflet, it allows users to interactively explore survey results across time and geography.\nView Dashboard Code on GitHub"
   }
 ]

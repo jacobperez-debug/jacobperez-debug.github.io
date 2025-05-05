@@ -11,7 +11,7 @@ warning: false
 message: false
 code-fold: true
 categories: [Dashboard, R, STAT541]
-draft: true
+draft: false
 ---
 
 ## Interactive Dashboard
