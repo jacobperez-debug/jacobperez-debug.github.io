@@ -6,10 +6,11 @@ author:
     url: https://github.com/jacobperez-debug
     affiliation: Master of Science in Statistics @ Cal Poly SLO
 date: 04-30-2025
+image: thumbnail.png
 warning: false
 message: false
 code-fold: true
-categories: [Quarto, R, STAT541]
+categories: [R, STAT541]
 draft: true
 ---
 

@@ -2,8 +2,6 @@
 title: "About"
 ---
 
-About this site
+Welcome! This site is a personal hub for showcasing projects I've worked on across data science and analytics. It's a place to explore ideas, share what I’ve built, and document the process along the way. Whether you're here to browse, get inspired, or dig into the details, I hope you find something interesting.
 
-```{r}
-1 + 1
-```
+

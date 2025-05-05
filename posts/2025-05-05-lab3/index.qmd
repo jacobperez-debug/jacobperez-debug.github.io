@@ -6,10 +6,11 @@ author:
     url: https://github.com/jacobperez-debug
     affiliation: Master of Science in Statistics @ Cal Poly SLO
 date: 05-05-2025
+image: thumbnail.png
 warning: false
 message: false
 code-fold: true
-categories: [Quarto, R, STAT541]
+categories: [Dashboard, R, STAT541]
 draft: true
 ---
 
@@ -21,4 +22,4 @@ draft: true
 
 This dashboard explores changes in public trust in science across different global regions. Built using Quarto and Leaflet, it allows users to interactively explore survey results across time and geography.
 
-[View Dashboard Code on GitHub](https://github.com/jacobperez-debug/YOUR-REPO-HERE)
+[View Dashboard Code on GitHub](https://github.com/jacobperez-debug/lab-3)

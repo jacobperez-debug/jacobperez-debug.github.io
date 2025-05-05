@@ -1,0 +1,25 @@
+---
+title: "Shiny App: Exploring Vaccine Confidence"
+description: "An interactive dashboard built in Shiny to explore regional patterns in vaccine trust."
+author: 
+  - name: Jacob Perez
+    url: https://github.com/jacobperez-debug
+    affiliation: Master of Science in Statistics @ Cal Poly SLO
+date: 05-05-2025
+image: thumbnail.png
+warning: false
+message: false
+code-fold: true
+categories: [Dashboard, R, STAT541, Shiny]
+draft: true
+---
+
+## Explore the Dashboard
+
+<iframe src="https://jacobperez-debug.shinyapps.io/lab4/" width="100%" height="600px"></iframe>
+
+## About the Project
+
+This interactive dashboard was built in Shiny to visualize changes in vaccine confidence across global regions. The app includes time filtering and regional comparisons.
+
+[View the full code on GitHub](https://github.com/jacobperez-debug/lab-4)
