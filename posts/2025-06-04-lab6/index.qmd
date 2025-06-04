@@ -1,0 +1,310 @@
+---
+title: "Efficient Function Building"
+description: "Designing efficient functions in R for Data Science"
+author: 
+  - name: Jacob Perez
+    url: https://github.com/jacobperez-debug
+    affiliation: Master of Science in Statistics @ Cal Poly SLO
+date: 06-04-2025
+warning: false
+message: false
+code-fold: true
+categories: [R, STAT541, Function Building]
+draft: true
+---
+
+The exercises from the functions below were pulled from the newest version of [*R for Data Science*](https://r4ds.hadley.nz/). Specifically, from Chapters 25 and 26. For this "alternative" lab you will complete the exercises from the textbook, with the option of submitting a pull request to the [repository for the textbook solutions](https://github.com/mine-cetinkaya-rundel/r4ds-solutions/).
+
+# Vector Functions
+
+**Question 1:** The `rescale01()` function below performs a min-max scaling to standardize a numeric vector, but infinite values are left unchanged. Rewrite `rescale01()` so that `-Inf` is mapped to 0, and `Inf` is mapped to 1? \*Hint: This seems like a great place for `case_when()`!
+
+```{r}
+#| label: question-1
+
+rescale01 <- function(x) {
+  
+  x_clean <- dplyr::case_when(
+    x == -Inf ~ 0,
+    x ==  Inf ~ 1,
+    TRUE      ~ x
+  )
+  
+  rng <- range(x_clean[is.finite(x_clean)], na.rm = TRUE)
+  scaled <- (x_clean - rng[1]) / (rng[2] - rng[1])
+
+  return(scaled)
+}
+```
+
+```{r}
+# should return: 0.0, 0.5, 1.0
+rescale01(c(5, 10, 15))   
+
+ # should return: 0.0, 1.0
+rescale01(c(-Inf, 0.5, Inf))  
+
+# should handle NA correctly
+rescale01(c(NA, 2, 3))  
+```
+
+**Question 2:** Write a function that accepts a vector of birthdates and computes the age of each person in years.
+
+```{r}
+#| label: question-2
+
+age_in_years <- function(birthdates) {
+  as.numeric(difftime(Sys.Date(), as.Date(birthdates), units = "days")) %/% 365
+}
+```
+
+```{r}
+# should return ~age in years
+age_in_years(c("2000-01-01", "1990-05-20")) 
+
+# should return 0
+age_in_years(Sys.Date())                    
+```
+
+**Question 3:** Write a function that computes the variance and skewness of a numeric vector. Feel free to look up the definitions on Wikipedia or elsewhere!
+
+```{r}
+#| label: question-3
+
+variance_and_skewness <- function(x) {
+  x <- x[is.finite(x)]
+  m <- mean(x)
+  n <- length(x)
+  var_x <- sum((x - m)^2) / (n - 1)
+  skew_x <- sum((x - m)^3) / ((n - 1) * sd(x)^3)
+  list(variance = var_x, skewness = skew_x)
+}
+```
+
+```{r}
+# symmetric data (low skew)
+variance_and_skewness(c(1, 2, 3, 4, 5)) 
+
+# strong positive skew
+variance_and_skewness(c(1, 2, 2, 3, 100))
+
+# should ignore NA
+variance_and_skewness(c(1, NA, 3, 5))      
+```
+
+**Question 4:** Write a function called `both_na()` which takes two vectors of the same length and returns the number of positions that have an `NA` in both vectors.
+
+```{r}
+both_na <- function(x, y) {
+  sum(is.na(x) & is.na(y))
+}
+```
+
+```{r}
+# should return 1
+both_na(c(1, NA, 3, NA), c(NA, NA, 3, 4)) 
+
+# should return 2
+both_na(c(NA, NA), c(NA, NA))              
+
+# should return 0
+both_na(1:3, 4:6)              
+```
+
+## Data Frame Functions
+
+**Question 5:** Insert the data frame function you wrote from Lab 6 (either Exercise 1 or Exercise 2).
+
+```{r}
+#| label: function-from-lab-2
+#| message: false
+
+library(dplyr)
+library(rlang)
+
+remove_outliers <- function(data, ..., sd_thresh = 3){
+  vars <- enquos(...)
+  
+  filtered_data <- data
+  
+  for (var in vars) {
+    var_name <- quo_name(var)
+    
+    if (!is.numeric(pull(filtered_data, !!var))) {
+      warning(glue::glue("Variable '{var_name}' is not numeric."))
+      next
+    }
+    
+    var_mean <- mean(pull(filtered_data, !!var), na.rm = TRUE)
+    var_sd <- sd(pull(filtered_data, !!var), na.rm = TRUE)
+    
+    filtered_data <- filtered_data %>%
+      filter(abs((!!var - var_mean) / var_sd) < sd_thresh)
+  }
+  
+  return(filtered_data)
+}
+```
+
+```{r}
+#| message: false
+
+library(tidyverse)
+
+# Multiple numeric vars
+remove_outliers(diamonds, price, x, y, z)
+
+# Skips non-numeric gracefully
+remove_outliers(diamonds, price, color)
+
+# Custom SD threshold
+remove_outliers(diamonds, price, x, y, z, sd_thresh = 2)
+```
+
+For Questions 6 - 10 you will write different functions which work with data similar to the `nycflights13` data.
+
+**Question 6:** Write a `filter_severe()` function that finds all flights that were cancelled (i.e. `is.na(arr_time)`) or delayed by more than an hour.
+
+```{r}
+#| label: question-6
+
+filter_sever <- function(flights) {
+  dplyr::filter(flights, is.na(arr_time) | dep_delay > 60)
+}
+```
+
+```{r}
+library(nycflights13)
+
+filter_sever(flights)  
+```
+
+**Question 7:** Write a `summarize_severe()` function that counts the number of cancelled flights and the number of flights delayed by more than an hour.
+
+```{r}
+#| label: question-7
+
+summarize_sever <- function(flights) {
+  dplyr::summarise(
+    flights,
+    cancelled = sum(is.na(arr_time)),
+    delayed_over_hour = sum(dep_delay > 60, na.rm = TRUE)
+  )
+}
+```
+
+```{r}
+summarize_sever(flights)
+```
+
+**Question 8:** Modify your `filter_severe()` function to allow the user to supply the number of hours that should be used to filter the flights that were cancelled or delayed.
+
+```{r}
+#| label: question-8
+
+filter_severe <- function(flights, hours = 1) {
+  delay_limit <- hours * 60
+  dplyr::filter(flights, is.na(arr_time) | dep_delay > delay_limit)
+}
+```
+
+```{r}
+filter_severe(flights, hours = 2)
+```
+
+**Question 9:** Write a `summarize_weather()` function that summarizes the weather to compute the minimum, mean, and maximum, of a user supplied variable.
+
+```{r}
+#| label: question-9
+
+summarize_weather <- function(weather, variable) {
+  variable <- rlang::enquo(variable)
+  dplyr::summarise(
+    weather,
+    min = min(!!variable, na.rm = TRUE),
+    mean = mean(!!variable, na.rm = TRUE),
+    max = max(!!variable, na.rm = TRUE)
+  )
+}
+```
+
+```{r}
+summarize_weather(weather, temp)
+summarize_weather(weather, wind_speed) 
+```
+
+**Question 10:** Write a `standardize_time()` function that converts the user supplied variable that uses clock time (e.g., `dep_time`, `arr_time`, etc.) into a decimal time (i.e. hours + (minutes / 60)).
+
+```{r}
+#| label: question-10
+
+standardize_time <- function(time_vec) {
+  hours <- time_vec %/% 100
+  minutes <- time_vec %% 100
+  hours + minutes / 60
+}
+```
+
+```{r}
+# should return 9.00 and 14.5
+standardize_time(c(900, 1430))  
+
+
+standardize_time(c(0, 30, 100))
+```
+
+# Plotting Functions
+
+You might want to read over the [Plot Functions section of *R for Data Science*](https://r4ds.hadley.nz/functions.html#plot-functions)
+
+**Question 11:** Build a `sorted_bars()` function which:
+
+-   takes a data frame and a variable as inputs and returns a **vertical** bar chart
+-   sorts the bars in decreasing order (largest to smallest)
+-   adds a title that includes the context of the variable being plotted
+
+*Hint 1: The `fct_infreq()` and `fct_rev()` functions from the forcats package will be helpful for sorting the bars!* *Hint 2: The `englue()` function from the rlang package will be helpful for adding a variable's name into the plot title!*
+
+```{r}
+#| label: question-11
+
+library(ggplot2)
+library(forcats)
+library(rlang)
+
+sorted_bars <- function(data, var) {
+  var <- enquo(var)
+  
+  ggplot(data, aes(x = fct_infreq(!!var) %>% fct_rev())) +
+    geom_bar() +
+    labs(
+      x = NULL,
+      y = "Count",
+      title = glue::glue("Bar chart of {quo_name(var)} (sorted by frequency)")
+    ) +
+    theme_minimal()
+}
+```
+
+# Iteration
+
+Alright, now let's take our plotting function and iterate it!
+
+**Question 12:** Make a sorted barplot for every character variable in the `mpg` dataset (built into `ggplot2`).
+
+```{r}
+#| label: question-12
+
+library(purrr)
+library(dplyr)
+
+char_vars <- mpg %>% select(where(is.character)) %>% names()
+
+plots <- map(char_vars, ~ sorted_bars(mpg, .data[[.x]]))
+```
+
+```{r}
+library(patchwork)
+
+wrap_plots(plots, ncol = 2)
+```

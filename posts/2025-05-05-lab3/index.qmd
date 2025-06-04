@@ -16,7 +16,9 @@ draft: false
 
 ## Interactive Dashboard
 
-<iframe src="https://jacobperez.quarto.pub/trust-in-science-global-patterns--change/#trust-across-regions" width="100%" height="600px"></iframe>
+<iframe src="https://jacobperez.quarto.pub/trust-in-science-global-patterns--change/#trust-across-regions" width="100%" height="600px">
+
+</iframe>
 
 ## About the Project
 

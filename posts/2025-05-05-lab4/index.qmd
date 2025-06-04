@@ -11,12 +11,14 @@ warning: false
 message: false
 code-fold: true
 categories: [Dashboard, R, STAT541, Shiny]
-draft: true
+draft: false
 ---
 
 ## Explore the Dashboard
 
-<iframe src="https://jacobperez-debug.shinyapps.io/lab4/" width="100%" height="600px"></iframe>
+<iframe src="https://jacobperez-debug.shinyapps.io/lab4/" width="100%" height="600px">
+
+</iframe>
 
 ## About the Project
 
