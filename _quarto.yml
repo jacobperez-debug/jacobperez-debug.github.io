@@ -11,8 +11,10 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - posts.qmd
+      - href: about.qmd
+        text: About
+      - href: posts.qmd
+        text: Posts
       - href: resources.qmd
         text: Resources
 
