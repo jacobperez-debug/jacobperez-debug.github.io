@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,12 +34,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-7ad6542725e80d1433b1f8ee26c2a1fc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-fdf986989e2058d46a90f864900247d8.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,8 +98,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./thesis.html"> 
+<span class="menu-text">Thesis</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./posts.html"> 
-<span class="menu-text">My Blog</span></a>
+<span class="menu-text">Posts</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./resources.html"> 
@@ -129,8 +133,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta column-page">
   </div>
 </header><main class="content column-page" id="quarto-document-content">
-<p>Hi I’m Jacob. I am a stats grad student with an acturial prep minor from Cal Poly SLO. I built this site to share some of my favorite data projects, because I love to sit and work at a computer for hours on end :).</p>
-<p>Obviously I love to visualize data in many ways and get the chance to test many peoples different hypotheses, but when im not buried in code, I do enjoy other things. I really enjoy to watch and consume anything sports related, right now I am watching a lot of basketball, soccer, football, and trying to learn baseball. If im not watching I’m usually playing, at least basketball or soccer. If you need a team to support follow me in my Manchester United fandom. Besides sports I also love to play some board games, never lost at Settlers of Catan, which is my claim to fame. Lately, I’ve really been trying to level up my cooking skills, open to any recommendations.</p>
+<p>Hi, I’m Jacob Perez, a statistics graduate student at Cal Poly SLO specializing in data visualization and analytics. I am passionate about exploring data, finding insights, and transforming complex information into clear and compelling visuals. This site is my host for those projects.</p>
+<p>When I’m not behind the computer analyzing datasets, I’m usually watching sports or spending time with friends. I also always enjoy playing board games. These both help me engage and interact with data and statistics beyond the technical aspect.</p>
 
 
 </main> 
@@ -367,8 +371,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -479,7 +481,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

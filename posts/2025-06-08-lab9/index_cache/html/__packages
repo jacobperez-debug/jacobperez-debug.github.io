@@ -1,0 +1,17 @@
+base
+methods
+datasets
+utils
+grDevices
+graphics
+stats
+dplyr
+purrr
+tidyr
+tibble
+ggplot2
+ambient
+tictoc
+ggthemes
+gifski
+scales
