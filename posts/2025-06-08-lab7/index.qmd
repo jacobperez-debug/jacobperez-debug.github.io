@@ -10,7 +10,7 @@ image: lab7thumbnail.png
 warning: false
 message: false
 categories: [R, STAT541, API]
-draft: true
+draft: false
 ---
 
 ```{r}

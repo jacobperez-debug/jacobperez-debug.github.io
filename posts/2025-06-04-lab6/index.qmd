@@ -10,7 +10,7 @@ image: lab6thumbnail.png
 warning: false
 message: false
 categories: [R, STAT541, Function Building]
-draft: true
+draft: false
 ---
 
 The exercises from the functions below were pulled from the newest version of [*R for Data Science*](https://r4ds.hadley.nz/). Specifically, from Chapters 25 and 26.

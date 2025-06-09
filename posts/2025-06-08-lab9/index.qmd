@@ -10,7 +10,7 @@ image: lab9thumbnail.png
 warning: false
 message: false
 categories: [R, STAT541, Generative Art]
-draft: true
+draft: false
 ---
 
 # Libraries
