@@ -13,6 +13,8 @@ website:
         text: Home
       - href: about.qmd
         text: About
+      - href: thesis.qmd
+        text: Thesis
       - href: posts.qmd
         text: Posts
       - href: resources.qmd

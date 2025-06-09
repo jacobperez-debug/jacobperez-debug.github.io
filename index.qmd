@@ -14,8 +14,8 @@ about:
       href: malito::jpere212@calpoly.edu
 ---
 
-Hi I'm Jacob Perez, a stats grad student at Cal Poly SLO specializing in data visualization and analytics. I built this site to share some of my favorite data projects, because I love to sit and work at a computer for hours on end :).
+Hi, I'm Jacob Perez, a statistics graduate student at Cal Poly SLO specializing in data visualization and analytics. I am passionate about exploring data, finding insights, and transforming complex information into clear and compelling visuals. This site is my host for those projects. 
 
-Obviously I love to visualize data in many ways and get the chance to test many peoples different hypotheses, but when im not buried in code, I do enjoy other things. I really enjoy to watch and consume anything sports related, right now I am watching a lot of basketball, soccer, football, and trying to learn baseball. If im not watching I'm usually playing, at least basketball or soccer. If you need a team to support follow me in my Manchester United fandom. Besides sports I also love to play some board games, never lost at Settlers of Catan, which is my claim to fame. Lately, I've really been trying to level up my cooking skills, open to any recommendations.
+When I'm not behind the computer analyzing datasets, I'm usually watching sports or spending time with friends. I also always enjoy playing board games. These both help me engage and interact with data and statistics beyond the technical aspect. 
 
 

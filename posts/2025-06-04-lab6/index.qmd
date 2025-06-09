@@ -1,18 +1,19 @@
 ---
-title: "Efficient Function Building"
-description: "Designing efficient functions in R for Data Science"
+title: "Optimizing R Functions for Data Science"
+description: "Explored the principles and best practices for creating robust and effecient R functions to improve data workflows."
 author: 
   - name: Jacob Perez
     url: https://github.com/jacobperez-debug
     affiliation: Master of Science in Statistics @ Cal Poly SLO
 date: 06-04-2025
+image: lab6thumbnail.png
 warning: false
 message: false
 categories: [R, STAT541, Function Building]
 draft: true
 ---
 
-The exercises from the functions below were pulled from the newest version of [*R for Data Science*](https://r4ds.hadley.nz/). Specifically, from Chapters 25 and 26. 
+The exercises from the functions below were pulled from the newest version of [*R for Data Science*](https://r4ds.hadley.nz/). Specifically, from Chapters 25 and 26.
 
 # Vector Functions
 
@@ -51,7 +52,7 @@ rescale01(c(-Inf, 0.5, Inf))
 rescale01(c(NA, 2, 3))  
 ```
 
-## Question 2 
+## Question 2
 
 **Write a function that accepts a vector of birthdates and computes the age of each person in years.**
 
