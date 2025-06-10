@@ -1,6 +1,6 @@
 ---
-title: "Quarto Dashboards: Static Reporting"
-description: "Created a static reproducible dashboard using Quarto for efficient data reporting."
+title: "Lab 3: Quarto Dashboards: Static Reporting"
+description: "Created a static reproducible dashboard using Quarto for data reporting."
 author: 
   - name: Jacob Perez
     url: https://github.com/jacobperez-debug

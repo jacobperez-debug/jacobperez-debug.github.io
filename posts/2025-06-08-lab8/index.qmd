@@ -1,10 +1,11 @@
 ---
-title: "Data Collection for Specialty Cheeses"
+title: "Lab 8: Data Collection for Specialty Cheeses"
 description: "Designed a web scraper to get product data from cheese.com to build a dataset on all cheeses from the website."
 author: 
   - name: Jacob Perez
     url: https://github.com/jacobperez-debug
     affiliation: Master of Science in Statistics @ Cal Poly SLO
+  - name: Zach Felix
 date: 06-08-2025
 image: lab8thumbnail.png
 warning: false

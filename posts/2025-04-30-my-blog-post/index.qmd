@@ -1,12 +1,12 @@
 ---
-title: "Having Fun with Data Visualizations"
+title: "Lab 2: Having Fun with Data Visualizations"
 description: "An animated visaulization exploring the Wellcome Global Monitor 2018 Report"
 author: 
   - name: Jacob Perez
     url: https://github.com/jacobperez-debug
     affiliation: Master of Science in Statistics @ Cal Poly SLO
 date: 04-30-2025
-image: thumbnail.png
+image: lab2thumbnail.png
 warning: false
 message: false
 code-fold: true
@@ -226,7 +226,8 @@ leaflet(leaflet_map_df) %>%
       fillOpacity = 0.9,
       bringToFront = TRUE
     )
-  )
+  ) %>%
+  setView(lng = 15, lat = 20, zoom = 1)
 ```
 
 ## Third Data Visualization Improvement

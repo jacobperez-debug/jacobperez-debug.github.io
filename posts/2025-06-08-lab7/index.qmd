@@ -1,10 +1,11 @@
 ---
-title: "Analyzing ISS Satelitte Activities"
+title: "Lab 7: Analyzing ISS Satelitte Activities"
 description: "Used Satelitte APIs to collect and visualize daily routines of the International Space Station."
 author: 
   - name: Jacob Perez
     url: https://github.com/jacobperez-debug
     affiliation: Master of Science in Statistics @ Cal Poly SLO
+  - name: Zach Felix
 date: 06-08-2025
 image: lab7thumbnail.png
 warning: false

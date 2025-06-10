@@ -1,6 +1,6 @@
 ---
-title: "Generative Art: Time & Transformation"
-description: "Developed R-based functions to create abstract art inspired by character abilities and themes."
+title: "Lab 9: Generative Art: Time & Transformation"
+description: "Developed R functions to create abstract art inspired by my favorite character Ekko."
 author: 
   - name: Jacob Perez
     url: https://github.com/jacobperez-debug

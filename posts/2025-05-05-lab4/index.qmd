@@ -1,6 +1,6 @@
 ---
-title: "Interactive Dashboard: Vaccine Confidence Trends"
-description: "Built a dynamic R Shiny application to visualize and analyze regional and country level patterns in vaccine confidence."
+title: "Lab 4: Interactive Dashboard: Vaccine Confidence Trends"
+description: "Built a R Shiny application to visualize and analyze regional and country level patterns in vaccine confidence."
 author: 
   - name: Jacob Perez
     url: https://github.com/jacobperez-debug

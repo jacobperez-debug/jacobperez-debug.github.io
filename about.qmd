@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "About Me"
 ---
 
 Welcome to my personal portfolio! This website is a hub dedicated to showcasing some my journey and passion for data science and analytics. Over the past 5 years I have been able to learn so much about statistics and data science as a field. Through this learning I have seen just how powerful it is to be able to turn raw data into actionable insights. 

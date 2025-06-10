@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jacob Perez">
-<meta name="dcterms.date" content="2025-05-05">
-<meta name="description" content="Built a R Shiny application to visualize and analyze regional and country level patterns in vaccine confidence.">
+<meta name="dcterms.date" content="2025-06-10">
+<meta name="description" content="Took a review of basic quarto syntax as well as dplyr() functions we learned in STAT 331.">
 
-<title>Lab 4: Interactive Dashboard: Vaccine Confidence Trends – Jacob Perez</title>
+<title>Lab 1: Quarto Warmup and STAT 331 Review – Jacob Perez</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -121,17 +155,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Lab 4: Interactive Dashboard: Vaccine Confidence Trends</h1>
+      <h1 class="title">Lab 1: Quarto Warmup and STAT 331 Review</h1>
                   <div>
         <div class="description">
-          Built a R Shiny application to visualize and analyze regional and country level patterns in vaccine confidence.
+          Took a review of basic quarto syntax as well as <code>dplyr()</code> functions we learned in STAT 331.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Dashboard</div>
                 <div class="quarto-category">R</div>
                 <div class="quarto-category">STAT541</div>
-                <div class="quarto-category">Shiny</div>
               </div>
                   </div>
   </div>
@@ -156,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 5, 2025</p>
+        <p class="date">June 10, 2025</p>
       </div>
     </div>
     
@@ -172,8 +204,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#explore-the-dashboard" id="toc-explore-the-dashboard" class="nav-link active" data-scroll-target="#explore-the-dashboard">Explore the Dashboard</a></li>
-  <li><a href="#about-the-project" id="toc-about-the-project" class="nav-link" data-scroll-target="#about-the-project">About the Project</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#data-wrangling-review" id="toc-data-wrangling-review" class="nav-link" data-scroll-target="#data-wrangling-review">Data Wrangling Review</a></li>
+  <li><a href="#getting-to-know-your-classmates" id="toc-getting-to-know-your-classmates" class="nav-link" data-scroll-target="#getting-to-know-your-classmates">Getting to know your classmates</a></li>
   </ul>
 </nav>
     </div>
@@ -184,15 +217,205 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="explore-the-dashboard" class="level2">
-<h2 class="anchored" data-anchor-id="explore-the-dashboard">Explore the Dashboard</h2>
-<iframe src="https://jacobperez-debug.shinyapps.io/lab4/" width="100%" height="900px">
-</iframe>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>First, let’s make sure you know how to use Markdown formatting to style a Quarto document.</p>
+<ol type="1">
+<li><p><strong>Make this text bold.</strong></p></li>
+<li><p><em>Make this text italicized.</em></p></li>
+<li><p>Make these into a bullet point list:</p></li>
+</ol>
+<ul>
+<li><p>Apples</p></li>
+<li><p>Bananas</p></li>
+<li><p>Potatoes</p></li>
+</ul>
+<ol start="4" type="1">
+<li><p>Edit the YAML to remove warning messages from being output in the rendered HTML file</p></li>
+<li><p>Using code chunk options, make it so this chunk shows the plot but not the source code:</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/Code Hidden but Plot Shows-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Using code chunk options, remove the messages about bandwidth <code>geom_density_ridges()</code> chose to use:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> manufacturer, <span class="at">x =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Highway Milage (mpg) for Different Car Manufacturers"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/Warning Message Removed Code-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Using code chunk options, make it so that these plots are printed side-by-side:</li>
+</ol>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> manufacturer, <span class="at">x =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Highway Milage (mpg) for Different Car Manufacturers"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       )</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mpg, </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> manufacturer, <span class="at">x =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Highway Milage (mpg) for Different Car Manufacturers"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>       )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="index_files/figure-html/Both Plots Shown Side-by-Side-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="index_files/figure-html/Both Plots Shown Side-by-Side-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<ol start="8" type="1">
+<li>Using code chunk options, make it so this chunk shows the code but not the output:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="9" type="1">
+<li>Using code chunk options, make it so the file can still knit even though this chunk has an error</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'a' not found</code></pre>
+</div>
+</div>
+<ol start="10" type="1">
+<li>Using code chunk options, create a descriptive <code>label</code> for each of the code chunks above.</li>
+</ol>
 </section>
-<section id="about-the-project" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-project">About the Project</h2>
-<p>This interactive dashboard was built in Shiny to visualize changes in vaccine confidence across global regions. The app includes time filtering and regional comparisons.</p>
-<p><a href="https://github.com/jacobperez-debug/lab-4">View the full code on GitHub</a></p>
+<section id="data-wrangling-review" class="level2">
+<h2 class="anchored" data-anchor-id="data-wrangling-review">Data Wrangling Review</h2>
+<p>Since you already seen some <code>ggplot</code>s, let’s do a bit of review on data handling. In this class, we will exclusively make use of tools from the <code>tidyverse</code> suite of packages to perform our data cleaning and wrangling operations. If you are less familiar with these packages or it’s been some time since you used them, I would strongly recommend referencing the function documentation!</p>
+<p>For these problems, we will continue to work with the <code>mpg</code> data frame, making various changes to the data to clean it up.</p>
+<ol start="11" type="1">
+<li>The <code>fl</code> variable describes the type of fuel for each car, with levels: <code>p</code>, <code>r</code>, <code>e</code>, <code>d</code>, and <code>c</code>. Do some research into what each of these labels mean! Then, use the <code>if_else()</code> function to create a new variable (<code>fuel_type</code>) with two levels: <code>petrol</code> (any car using petrolium-based gas) and <code>alternative energy</code> (any car not using petrolium-based gas).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fuel_type =</span> <span class="fu">if_else</span>(fl <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"p"</span>, <span class="st">"r"</span>, <span class="st">"d"</span>), <span class="st">"petrol"</span>, <span class="st">"alternative energy"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 234 × 12
+   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class
+   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 audi         a4           1.8  1999     4 auto… f        18    29 p     comp…
+ 2 audi         a4           1.8  1999     4 manu… f        21    29 p     comp…
+ 3 audi         a4           2    2008     4 manu… f        20    31 p     comp…
+ 4 audi         a4           2    2008     4 auto… f        21    30 p     comp…
+ 5 audi         a4           2.8  1999     6 auto… f        16    26 p     comp…
+ 6 audi         a4           2.8  1999     6 manu… f        18    26 p     comp…
+ 7 audi         a4           3.1  2008     6 auto… f        18    27 p     comp…
+ 8 audi         a4 quattro   1.8  1999     4 manu… 4        18    26 p     comp…
+ 9 audi         a4 quattro   1.8  1999     4 auto… 4        16    25 p     comp…
+10 audi         a4 quattro   2    2008     4 manu… 4        20    28 p     comp…
+# ℹ 224 more rows
+# ℹ 1 more variable: fuel_type &lt;chr&gt;</code></pre>
+</div>
+</div>
+<ol start="12" type="1">
+<li>The <code>drv</code> variable describes if the car has front drive (<code>f</code>), rear drive (<code>r</code>), or four wheel drive (<code>4</code>). Let’s make better labels for these values! Specifically, use the <code>case_when()</code> function to change the <code>drv</code> varible to have the following levels: <code>front</code>, <code>rear</code>, <code>four wheel</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">drv =</span> <span class="fu">case_when</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    drv <span class="sc">==</span> <span class="st">"f"</span> <span class="sc">~</span> <span class="st">"front"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    drv <span class="sc">==</span> <span class="st">"r"</span> <span class="sc">~</span> <span class="st">"rear"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    drv <span class="sc">==</span> <span class="st">"4"</span> <span class="sc">~</span> <span class="st">"four wheel"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 234 × 11
+   manufacturer model      displ  year   cyl trans drv     cty   hwy fl    class
+   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 audi         a4           1.8  1999     4 auto… front    18    29 p     comp…
+ 2 audi         a4           1.8  1999     4 manu… front    21    29 p     comp…
+ 3 audi         a4           2    2008     4 manu… front    20    31 p     comp…
+ 4 audi         a4           2    2008     4 auto… front    21    30 p     comp…
+ 5 audi         a4           2.8  1999     6 auto… front    16    26 p     comp…
+ 6 audi         a4           2.8  1999     6 manu… front    18    26 p     comp…
+ 7 audi         a4           3.1  2008     6 auto… front    18    27 p     comp…
+ 8 audi         a4 quattro   1.8  1999     4 manu… four…    18    26 p     comp…
+ 9 audi         a4 quattro   1.8  1999     4 auto… four…    16    25 p     comp…
+10 audi         a4 quattro   2    2008     4 manu… four…    20    28 p     comp…
+# ℹ 224 more rows</code></pre>
+</div>
+</div>
+<p>(string split + remove extra “)” ) 13. The <code>trans</code> variable contains two pieces of information, (1) the transmission style (<code>auto</code> or <code>manual</code>) and the specific type of transmission (e.g., <code>l5</code>, <code>m5</code>). Using the <code>str_split()</code> function, create a new variable (<code>trans_type</code>) containing the specific type of transmission of each car. Once you’ve made this new variable, use the <code>rename()</code> function to change the name of the <code>trans</code> column to <code>trans_style</code>.<br>
+<em>Hint: You will need to deal with the stray parenthesis!</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">trans_type =</span> <span class="fu">str_split_i</span>(trans, <span class="st">"</span><span class="sc">\\</span><span class="st">("</span>, <span class="at">i =</span> <span class="sc">-</span><span class="dv">1</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">trans_type =</span> <span class="fu">str_remove</span>(trans_type, <span class="st">"</span><span class="sc">\\</span><span class="st">)"</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">trans =</span> <span class="fu">str_split_i</span>(trans, <span class="st">"</span><span class="sc">\\</span><span class="st">("</span>, <span class="at">i =</span> <span class="dv">1</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">trans_style =</span> trans)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 234 × 12
+   manufacturer model      displ  year   cyl trans_style drv     cty   hwy fl   
+   &lt;chr&gt;        &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;       &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;
+ 1 audi         a4           1.8  1999     4 auto        f        18    29 p    
+ 2 audi         a4           1.8  1999     4 manual      f        21    29 p    
+ 3 audi         a4           2    2008     4 manual      f        20    31 p    
+ 4 audi         a4           2    2008     4 auto        f        21    30 p    
+ 5 audi         a4           2.8  1999     6 auto        f        16    26 p    
+ 6 audi         a4           2.8  1999     6 manual      f        18    26 p    
+ 7 audi         a4           3.1  2008     6 auto        f        18    27 p    
+ 8 audi         a4 quattro   1.8  1999     4 manual      4        18    26 p    
+ 9 audi         a4 quattro   1.8  1999     4 auto        4        16    25 p    
+10 audi         a4 quattro   2    2008     4 manual      4        20    28 p    
+# ℹ 224 more rows
+# ℹ 2 more variables: class &lt;chr&gt;, trans_type &lt;chr&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="getting-to-know-your-classmates" class="level2">
+<h2 class="anchored" data-anchor-id="getting-to-know-your-classmates">Getting to know your classmates</h2>
+<ol start="14" type="1">
+<li>Find someone who took Stat 331 from a different professor than you. Compare your experiences. Tell me their name and professor. List one or two things that you think you learned more about, and one or two things that they learned more about.</li>
+</ol>
+<p>Lily Cook and she took STAT 331 with Dr.&nbsp;Frame. I think we learned more about stringR towards the end of the course which Lily did not. Lily did more work I believe with dplyr as her course focused solely on statements like joins whereas we moved around a lot.</p>
+<ol start="15" type="1">
+<li>Find someone in the class who <strong>does not</strong> share your birth month. Tell me their name and birthday, and use R to find out how many days apart your birthdays are.</li>
+</ol>
+<p>Liam Quach, he was born on June 14th.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_bd <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2002-08-31"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>liam_bd <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2002-06-14"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>my_bd<span class="sc">-</span>liam_bd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Time difference of 78 days</code></pre>
+</div>
+</div>
 
 
 </section>

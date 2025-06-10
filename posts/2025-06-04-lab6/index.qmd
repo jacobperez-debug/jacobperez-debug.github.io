@@ -1,6 +1,6 @@
 ---
-title: "Optimizing R Functions for Data Science"
-description: "Explored the principles and best practices for creating robust and effecient R functions to improve data workflows."
+title: "Lab 6: Optimizing R Functions for Data Science"
+description: "Explored the principles and best practices for creating effecient R functions to improve data workflows."
 author: 
   - name: Jacob Perez
     url: https://github.com/jacobperez-debug

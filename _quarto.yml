@@ -12,13 +12,11 @@ website:
       - href: index.qmd
         text: Home
       - href: about.qmd
-        text: About
+        text: About Me
       - href: thesis.qmd
-        text: Thesis
+        text: BIRCH in tidyclust
       - href: posts.qmd
-        text: Posts
-      - href: resources.qmd
-        text: Resources
+        text: STAT 541 Portfolio
 
 format:
   html:
