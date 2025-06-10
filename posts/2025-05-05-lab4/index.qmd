@@ -6,7 +6,7 @@ author:
     url: https://github.com/jacobperez-debug
     affiliation: Master of Science in Statistics @ Cal Poly SLO
 date: 05-05-2025
-image: thumbnail.png
+image: lab4thumbnail.png
 warning: false
 message: false
 code-fold: true
