@@ -9,7 +9,6 @@ date: 06-10-2025
 image: lab1thumbnail.png
 warning: false
 message: false
-categories: [R, STAT541]
 draft: false
 ---
 

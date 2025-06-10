@@ -10,7 +10,6 @@ image: lab2thumbnail.png
 warning: false
 message: false
 code-fold: true
-categories: [R, STAT541]
 draft: false
 ---
 

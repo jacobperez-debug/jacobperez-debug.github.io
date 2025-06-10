@@ -10,7 +10,7 @@ image: lab3thumbnail.png
 warning: false
 message: false
 code-fold: true
-categories: [Dashboard, R, STAT541]
+categories: [Dashboard]
 draft: false
 ---
 

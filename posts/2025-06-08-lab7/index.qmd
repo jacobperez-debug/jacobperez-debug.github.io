@@ -10,7 +10,7 @@ date: 06-08-2025
 image: lab7thumbnail.png
 warning: false
 message: false
-categories: [R, STAT541, API]
+categories: [API]
 draft: false
 ---
 

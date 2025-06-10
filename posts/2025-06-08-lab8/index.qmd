@@ -10,7 +10,7 @@ date: 06-08-2025
 image: lab8thumbnail.png
 warning: false
 message: false
-categories: [R, STAT541, API, Web Scraping]
+categories: [API, Web Scraping]
 draft: false
 ---
 
