@@ -64,7 +64,6 @@ wgm2018_joined <- read.csv(here::here("data/wgm2018_joined.csv"))
 summary_df <- read.csv(here::here("data/summary_df.csv"))
 ```
 
-
 ```{r}
 #| label: improving the bad visualization (part 1)
 

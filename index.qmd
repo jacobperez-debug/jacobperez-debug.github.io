@@ -1,6 +1,6 @@
 ---
 title: "Jacob Perez"
-image: fallow-9558844_1280.jpg
+image: image.jpg
 about:
   template: jolla
   image-shape: round
