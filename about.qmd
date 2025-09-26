@@ -2,10 +2,8 @@
 title: "About Me"
 ---
 
-Welcome to my personal portfolio! This website is a hub dedicated to showcasing some my journey and passion for data science and analytics. Over the past 5 years I have been able to learn so much about statistics and data science as a field. Through this learning I have seen just how powerful it is to be able to turn raw data into actionable insights. 
+Welcome to my personal portfolio! Over the past several years I've grown from a student of statistics into someone eager to apply data science in the real world. My projects reflect the technical skills I have gained such as visualizations or machine learning in R, as well as personal interests that keep me motivated, like helping solve Manchester Uniteds problems. 
 
-Hopefully here on this website you'll find a collection of projects aimed at making those actionable insights. I have applied a range of skills including data visualization (R, `ggplot2`, Shiny), statistical modeling, data cleaning, and API integration. Each project reflects a different skill and has shaped my path towards data science in many ways. 
+Outside of coding and analysis, I stay grounded by watching sports, playing soccer, and enjoying time with friends. These experiences often fuel my curiosity and inspire the kinds of data questions I like to explore. 
 
-Beyond the code and numbers, I love to think strategically about sports analysis and board games. I believe both these hobbies complement my analytical work very well and probably annoy my friends at times with how I treat them. 
-
-Whether you're here to browse my work or take inspiration, I invite you to explore. Feel free to connect if you'd like to discuss anything!
+This site is both a portfolio as well as a snapshot of my journey. I hope you find something here that sparks your interest!

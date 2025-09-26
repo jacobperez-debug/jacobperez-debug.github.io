@@ -1,3 +1,7 @@
 ---
-title: "Implementing BIRCH in tidyclust"
+title: "BIRCH in tidyclust"
 ---
+
+During my master's thesis at Cal Poly, I am working on implementing the BIRCH clustering algorithm into the `tidyclust` R package. This work is aiming to extend `tidyclust` by adding BIRCH as a clustering engine.
+
+If you'd like to learn more, you can [download my full thesis here](https://digitalcommons.calpoly.edu/theses/3141/).

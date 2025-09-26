@@ -14,8 +14,6 @@ about:
       href: malito::jpere212@calpoly.edu
 ---
 
-Hi, I'm Jacob Perez, a statistics graduate student at Cal Poly SLO specializing in data visualization and analytics. I am passionate about exploring data, finding insights, and transforming complex information into clear and compelling visuals. This site is my host for those projects. 
-
-When I'm not behind the computer analyzing datasets, I'm usually watching sports or spending time with friends. I also always enjoy playing board games. These both help me engage and interact with data and statistics beyond the technical aspect. 
+Hi, I'm Jacob Perez, a statistics graduate student at Cal Poly SLO specializing in data visualization and analytics. Here you'll find a mix of academic work, personal projects, and research that showcase my skills and interests. You can explore my STAT 541 Portfolio for applied coursework, read my published thesis on BIRCH clustering in tidyclust, or browse some of the personal projects I enjoy building in my free time. 
 
 
